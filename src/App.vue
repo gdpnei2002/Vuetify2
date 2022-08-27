@@ -1,60 +1,53 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
+  <v-container color="primary" class="d-flex flex-row">
+    <v-img
+      max-height="500"
+      src="../../my-app/src/assets/login.png"
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld/>
-    </v-main>
-  </v-app>
+    </v-img>
+    <v-card 
+        class="mx-auto"
+        max-width="400"
+        >
+      <v-form v-model="valid">
+        <v-container>
+          <v-col>
+          <h1>Seja Bem-Vindo !</h1>
+            <v-col
+              cols="12"
+              md="12"
+            >
+            <label>Login
+              <v-text-field
+                v-model="email"
+                :rules="emailRules"
+                border-radios="1"
+                label="Login"
+                required
+              ></v-text-field> <v-icon>mdi-email</v-icon></label>
+              
+            </v-col>
+            <v-col
+              cols="12"
+              md="12"
+            >
+              <v-text-field
+                v-model="passwordname"
+                :rules="passwordRules"
+                type="password"
+                label="Password"
+                required
+              ></v-text-field>
+            </v-col>
+          </v-col>
+        </v-container>
+          <v-btn>
+            Finalizar
+          </v-btn><br>
+          <a href="">esqueci minha senha</a><br>
+          <a href="">Cadastre-se</a>
+          <h3>Desenvolvido por DarwinSoft</h3>
+      </v-form>
+    </v-card>
+  </v-container>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld';
-
-export default {
-  name: 'App',
-
-  components: {
-    HelloWorld,
-  },
-
-  data: () => ({
-    //
-  }),
-};
-</script>
